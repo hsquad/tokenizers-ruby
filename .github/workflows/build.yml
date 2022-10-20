@@ -26,11 +26,11 @@ jobs:
     - run: bundle exec rake download:files
     - run: bundle exec rake compile:release test
 
-    - uses: actions/download-artifact@v3
+    - uses: actions/upload-artifact@v3
       with:
-        name: cross-gem
-        path: pkg/
+        name: my-artifact
+        path: lib/
 
     - name: Display structure of built gems
       run: ls -R
-      working-directory: pkg/
+      working-directory: lib/
