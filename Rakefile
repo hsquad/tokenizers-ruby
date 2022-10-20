@@ -17,6 +17,7 @@ GEMSPEC = Bundler.load_gemspec("tokenizers.gemspec")
 Rake::ExtensionTask.new("tokenizers_ext", GEMSPEC) do |ext|
   ext.ext_dir = "."
   ext.lib_dir = "lib/tokenizers"
+  ext.cross_compile = true
   ext.cross_platform = CROSS_PLATFORMS
 end
 
