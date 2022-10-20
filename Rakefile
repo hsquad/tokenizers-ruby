@@ -62,3 +62,7 @@ desc "Compile in release mode"
 task "compile:release" => ["env:release", "compile"]
 
 task default: ["compile", "test"]
+
+CROSS_PLATFORMS.each do |plat|
+  task "gem:native:#{plat}" => ["compile"]
+end
