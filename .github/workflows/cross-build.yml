@@ -26,6 +26,8 @@ jobs:
           cargo-cache: true
           cargo-vendor: true
           cache-version: v1
+          
+      - run: bundle exec rake download:files
 
       - uses: oxidize-rb/cross-gem-action@v6
         with:
